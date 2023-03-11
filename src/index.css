@@ -176,3 +176,8 @@ div .name-inputs {
 .gender-label {
   margin-left: 10px;
 }
+
+/* dashboard */
+.card-row {
+  justify-content: space-evenly;
+}

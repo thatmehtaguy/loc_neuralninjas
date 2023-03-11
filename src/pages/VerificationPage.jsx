@@ -30,6 +30,7 @@ function VerificationPage () {
     await signup(fName, mName, lName, address)
   }
   
+    
   const handlePredict = () => {
     axios.post("", inputImage)
     .catch(error => (console.log(error)))
@@ -37,47 +38,6 @@ function VerificationPage () {
   
   return (
     <div className = "verification-page">
-      <div>
-        <div className = "col-lg-6">
-          {picture == '' ? (
-            <Webcam
-              audio={false}
-              height={400}
-              ref={webcamRef}
-              width={600}
-              screenshotFormat="image/jpeg"
-              videoConstraints={videoConstraints}
-            />
-          ) : (
-            <img src={picture} />
-          )}
-        </div>
-        <div>
-          {picture != '' ? (
-            <Button
-              onClick={(e) => {
-                e.preventDefault()
-                setPicture()
-              }}
-              className="btn btn-dark"
-            >
-              Retake
-            </Button>
-          ) : (
-            <Button
-              onClick={(e) => {
-                e.preventDefault()
-                capture()
-                handlePredict()
-              }}
-              className="btn btn-dark"
-            >
-              Capture
-            </Button>
-          )}
-        </div>
-      </div>
-      <div className = "col-lg-6">
         <form className="login" onSubmit={handleSubmit}>
           <h3>Enter Your Details:</h3>
           <div className = "verif-name-inputs">
@@ -155,7 +115,6 @@ function VerificationPage () {
           {error && <div className="error">{error}</div>}
         </form>
       </div>
-    </div>
   )
 }
 

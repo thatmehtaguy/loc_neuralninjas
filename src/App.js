@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navibar from './components/Navibar'
 import VerificationPage from './pages/VerificationPage'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   const { user } = useAuthContext()
@@ -32,6 +33,10 @@ function App() {
             <Route 
               path = "/verification"
               element = {!user ? <VerificationPage /> : <Navigate to = "/" />}
+            />
+            <Route 
+              path = "/dashboard"
+              element = {!user ? <Dashboard /> : <Navigate to = "/" />}
             />
           </Routes>
         </div>
